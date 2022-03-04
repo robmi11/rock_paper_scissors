@@ -12,21 +12,25 @@
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <div class="container">
-      <h2>AI picked: <span id="computer-choice"></span></h2>
-      <h2>You piccked: <span id="user-choice"></span></h2>
-      <h2>Result: <span id="result"></span></h2>
-      <h3>Time to next game: <span id="next-game"></span></h3>
+    <main class="container">
+      <div class="display">
+        <h2>AI picked: <span id="computer-choice"></span></h2>
+        <h2>You piccked: <span id="user-choice"></span></h2>
+        <h2>Result: <span id="result"></span></h2>
+        <h3>Time to next game: <span id="next-game"></span></h3>
+      </div>
       <div class="btn-container">
         <button>
           <i id="rock" class="fa-solid fa-hand-back-fist icon fa-2xl"></i>
         </button>
-        <button><i id="paper" class="fa-solid fa-hand icon fa-2xl"></i></button>
+        <button>
+          <i id="paper" class="fa-solid fa-hand icon fa-2xl"></i>
+        </button>
         <button>
           <i id="scissors" class="fa-solid fa-hand-scissors icon fa-2xl"></i>
         </button>
       </div>
-    </div>
+    </main>
 
     <script src="./app.js" charset="utf-8"></script>
   </body>

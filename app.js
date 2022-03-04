@@ -11,22 +11,23 @@ possibleChoices.forEach((possibleChoice) =>
   possibleChoice.addEventListener("click", (event) => {
     resultDisplay.innerText = "";
     userChoice = event.target.id;
-    userChoiceDisplay.innerText =
-      userChoice[0].toUpperCase() + userChoice.slice(1, userChoice.length);
+    userChoiceDisplay.innerText = formatDisplay(userChoice);
     generateComputerChoice();
     checkResult();
-    let x = 1;
+    let x = 2;
     let stopWatch = setInterval(() => {
       nextGameDisplay.innerHTML = `${x} s`;
-      x = x + 1;
+      x = x - 1;
     }, 1000);
-    document
-      .querySelectorAll("button")
-      .forEach((item) => (item.disabled = true));
+    document.querySelectorAll("button").forEach((item) => {
+      item.disabled = true;
+      item.classList.add("disabled");
+    });
     setTimeout(() => {
-      document
-        .querySelectorAll("button")
-        .forEach((item) => (item.disabled = false));
+      document.querySelectorAll("button").forEach((item) => {
+        item.disabled = false;
+        item.classList.remove("disabled");
+      });
       userChoiceDisplay.innerText = "";
       computerChoiceDisplay.innerText = "";
       resultDisplay.innerText = "";
