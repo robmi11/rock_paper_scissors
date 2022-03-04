@@ -1,6 +1,7 @@
 const userChoiceDisplay = document.getElementById("user-choice");
 const computerChoiceDisplay = document.getElementById("computer-choice");
 const resultDisplay = document.getElementById("result");
+const nextGameDisplay = document.getElementById("next-game");
 const possibleChoices = document.querySelectorAll("button");
 let userChoice;
 let computerChoice;
@@ -14,6 +15,11 @@ possibleChoices.forEach((possibleChoice) =>
       userChoice[0].toUpperCase() + userChoice.slice(1, userChoice.length);
     generateComputerChoice();
     checkResult();
+    let x = 1;
+    let stopWatch = setInterval(() => {
+      nextGameDisplay.innerHTML = `${x} s`;
+      x = x + 1;
+    }, 1000);
     document
       .querySelectorAll("button")
       .forEach((item) => (item.disabled = true));
@@ -24,6 +30,8 @@ possibleChoices.forEach((possibleChoice) =>
       userChoiceDisplay.innerText = "";
       computerChoiceDisplay.innerText = "";
       resultDisplay.innerText = "";
+      clearInterval(stopWatch);
+      nextGameDisplay.innerHTML = "";
     }, 3000);
   })
 );
