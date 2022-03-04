@@ -35,3 +35,17 @@ h2 {
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (max-width: 380px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 4px;
+    box-shadow: none;
+    border: none;
+  }
+
+  body {
+    justify-content: flex-start;
+  }
+}
